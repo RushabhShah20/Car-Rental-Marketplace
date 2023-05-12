@@ -16,56 +16,56 @@
             right: 100px;
             padding: 5px;
         }
-        
+
         .sign_up {
             top: 5px;
             right: 5px;
             padding: 5px;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
         }
-        
+
         header {
             background-color: #333;
             color: white;
             padding: 20px;
             text-align: center;
         }
-        
+
         h1 {
             margin: 0;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        
+
         nav li {
             margin: 0 10px;
         }
-        
+
         nav a {
             color: #333;
             text-decoration: none;
         }
-        
+
         nav a:hover {
             color: #00bfff;
         }
-        
+
         main {
             margin: 20px;
         }
-        
+
         section {
             margin-bottom: 20px;
         }
-        
+
         footer {
             background-color: #333;
             color: white;
@@ -79,58 +79,56 @@
     <div class="login">
         <a class="btn btn-outline-success" href="/login" role="button">Login</a>
     </div>
-    <div class="sign_up">
-        <a class="btn btn-outline-success" href="/signup" role="button">Sign Up</a>
-        <nav>
+    <nav>
+        <ul>
+            <li><a href="#featured-cars">Featured Cars</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about-us">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="featured-cars">
+            <h2>Featured Cars</h2>
+            <p>Check out some of our top rental options for cars:</p>
             <ul>
-                <li><a href="#featured-cars">Featured Cars</a></li>
-                <li><a href="#locations">Locations</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about-us">About Us</a></li>
+                <li><img src="{% static 'img/mahindra_thar.png'%}" alt="mahindra thar"></li>
+                <li><img src="{% static '/img/tata_nexon.png'%}" alt="tata nexon"></li>
+                <li><img src="{% static '/img/maruti_brezza.png'%}" alt="maruti brezza"></li>
             </ul>
-        </nav>
-        <main>
-            <section id="featured-cars">
-                <h2>Featured Cars</h2>
-                <p>Check out some of our top rental options for cars:</p>
-                <ul>
-                    <li><img src="{% static 'img/mahindra_thar.png'%}" alt="mahindra thar"></li>
-                    <li><img src="{% static '/img/tata_nexon.png'%}" alt="tata nexon"></li>
-                    <li><img src="{% static '/img/maruti_brezza.png'%}" alt="maruti brezza"></li>
-                </ul>
-                <h2>Featured bikes</h2>
-                <p>Check out some of our top rental options for bikes:</p>
-                <ul>
-                    <li><img src="{% static '/img/bajaj_pulsar.png'%}" alt="bajaj pulsar"></li>
-                    <li><img src="{%static '/img/hero_splendour.png'%}" alt="hero pulsar"></li>
-                    <li><img src="{%static '/img/tvs_apache.png'%}" alt="tvs apache"></li>
-                </ul>
-            </section>
-            <section id="locations">
-                <h2>Locations</h2>
-                <p>We have locations in the following cities:</p>
-                <ul>
-                    <li>Mumbai</li>
-                    <li>New Delhi</li>
-                    <li>Bengaluru</li>
-                </ul>
-            </section>
-            <section id="pricing">
-                <h2>Pricing</h2>
-                <p>Our rates start at Rs.250 per day, with discounts available for longer rentals.</p>
-            </section>
-            <section id="about-us">
-                <h2>About Us</h2>
-                <p>We are a family-owned business dedicated to providing excellent rental experiences for our customers.
-                </p>
-                <a href="/about">Contact details</a>
-            </section>
-            <h2>Want to earn a rental inome on your car?</h2>
-            <a href="">Click on the link to register as a leaser on our platform</a>
-        </main>
-        <footer>
-            <p>Copyright 2021 Car Rental Co.</p>
-        </footer>
+            <h2>Featured bikes</h2>
+            <p>Check out some of our top rental options for bikes:</p>
+            <ul>
+                <li><img src="{% static '/img/bajaj_pulsar.png'%}" alt="bajaj pulsar"></li>
+                <li><img src="{%static '/img/hero_splendour.png'%}" alt="hero pulsar"></li>
+                <li><img src="{%static '/img/tvs_apache.png'%}" alt="tvs apache"></li>
+            </ul>
+        </section>
+        <section id="locations">
+            <h2>Locations</h2>
+            <p>We have locations in the following cities:</p>
+            <ul>
+                <li>Mumbai</li>
+                <li>New Delhi</li>
+                <li>Bengaluru</li>
+            </ul>
+        </section>
+        <section id="pricing">
+            <h2>Pricing</h2>
+            <p>Our rates start at Rs.250 per day, with discounts available for longer rentals.</p>
+        </section>
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>We are a family-owned business dedicated to providing excellent rental experiences for our customers.
+            </p>
+            <a href="/about">Contact details</a>
+        </section>
+        <h2>Want to earn a rental inome on your car?</h2>
+        <a href="">Click on the link to register as a leaser on our platform</a>
+    </main>
+    <footer>
+        <p>Copyright 2021 Car Rental Co.</p>
+    </footer>
 </body>
 
 </html>

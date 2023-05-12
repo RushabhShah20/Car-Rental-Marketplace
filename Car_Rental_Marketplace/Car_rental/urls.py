@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from car_rental import views
+from car_lease import views
 
 urlpatterns = [
     path("", views.index, name="home"),
@@ -23,4 +24,8 @@ urlpatterns = [
     path("login/", views.login, name="login"),
     path("logout/", views.logout, name="logout"),
     path("signup/", views.signup, name="signup"),
+    path("dashboard/", views.dashboard, name="dashboard"),
+    path("car_lease_login/", views.car_lease_login, name="car_lease_login"),
+    path("car_lease_signup/", views.car_lease_signup, name="car_lease_signup"),
+    path("car_lease_dashboard/", views.car_lease_dashboard, name="car_lease_dsahboard"),
 ]

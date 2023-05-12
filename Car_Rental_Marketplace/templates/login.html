@@ -49,19 +49,21 @@
     </h3>
     <div class="form">
         <form method="post">
-            <div class="form-group row">
-                <label for="example-text-input" class="col-2 col-form-label">Username:</label>
+            {% csrf_token %}
+            <div>
+                <label for="username" class="col-2 col-form-label">Username:</label>
                 <div class="col-10">
-                    <input class="form-control" type="text" value="UserName" id="example-text-input">
+                    <input type="username" name="username" value="" id="username" required>
                 </div>
             </div><br>
-            <div class="form-group row">
-                <label for="password" class="col-2 col-form-label">Password</label>
+            <div>
+                <label for="password" class="col-2 col-form-label">Password:</label>
                 <div class="col-10">
-                    <input class="form-control" type="password" value="hunter2" id="password">
+                    <input type="password" name="password" value="" id="password" required>
                 </div>
             </div><br>
-            <button type="submit">Login</button>
+            <button type="submit">Login</button><br>
+            <a href="/signup/">Not Registered yet?</a>
         </form>
     </div>
     <script></script>

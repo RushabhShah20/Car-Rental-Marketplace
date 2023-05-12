@@ -49,6 +49,16 @@
             text-align: center;
         }
 
+        #email {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #phone-number {
+            padding: 10px;
+            text-align: center;
+        }
+
         input[type="text"],
         input[type="password"],
         input[type="date"],
@@ -56,7 +66,6 @@
         input[type="submit"],
         input[type="form-control"] textarea {
             width: 40%;
-            padding: 5px;
         }
     </style>
     <h3>
@@ -64,28 +73,29 @@
     </h3>
     <div class="form">
         <form method="POST">
-            <div class="form-group row" id="username">
-                <label for="example-text-input" class="col-2 col-form-label">Username:</label>
-                <div class="col-10">
-                    <input class="form-control" type="text" value="UserName" id="example-text-input">
-                </div>
+            {% csrf_token %}
+            <div id="username">
+                <label for="username">Username:</label>
+                <input class="username" type="text" value="" id="username" required>
             </div><br>
-            <div class="form-group row" id="password">
-                <label for="password-input" class="col-2 col-form-label">Password</label>
-                <div class="col-10">
-                    <input class="form-control" type="password" value="hunter2" id="password-input">
-                </div>
-            </div><br>
-            <div class="form-group row" id="confirm-password">
-                <label for="confirm-password-input" class="col-2 col-form-label">Confirm Password</label>
-                <div class="col-10">
-                    <input class="form-control" type="password" value="hunter2" id="confirm-password-input">
-                </div>
-            </div><br>
-            <div class="signup">
-                <a class="btn btn-outline-success" href="/" role="button">Sign Up</a>
+            <div id="phone-number-field">
+                <label for="phone-number">Phone Number:</label>
+                <input class="phone-number" type="text" id="phone-number" required>
             </div>
-
+            <div id="password">
+                <label for="password">Password:</label>
+                <input class="password" type="password" value="" id=" password " required>
+            </div><br>
+            <div id="confirm-password">
+                <label for="confirm-password">Confirm Password:</label>
+                <input class="confirm-password" type="password" value="" id="confirm-password" required>
+            </div><br>
+            <div class=" signup ">
+                <button type="submit">Sign Up</button>
+            </div>
+            <div>
+                <a href="/login">Already registered?</a>
+            </div>
         </form>
     </div>
     <script></script>
