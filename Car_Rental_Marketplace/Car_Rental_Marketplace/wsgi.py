@@ -1,5 +1,5 @@
 """
-WSGI config for Car_Rental_Marketplace project.
+WSGI config for car_rental_marketplace project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Car_Rental_Marketplace.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "car_rental_marketplace.settings")
 
 application = get_wsgi_application()
