@@ -49,3 +49,4 @@ class Car(models.Model):
     car_model = models.CharField(max_length=50)
     date_of_registration = models.CharField(max_length=50)
     car_price = models.IntegerField()
+    car_registration_state = models.CharField((""), max_length=50)
