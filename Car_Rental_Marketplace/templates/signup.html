@@ -76,19 +76,24 @@
             {% csrf_token %}
             <div id="username">
                 <label for="username">Username:</label>
-                <input class="username" type="text" value="" id="username" required>
+                <input class="username" type="text" value="" id="username" name="username" required>
             </div><br>
+            <div id="email">
+                <label for="email">Email:</label>
+                <input class="email" type="text" value="" id="email" name="email" required>
+            </div>
             <div id="phone-number-field">
                 <label for="phone-number">Phone Number:</label>
-                <input class="phone-number" type="text" id="phone-number" required>
+                <input class="phone-number" type="text" id="phone-number" name="phone-number" required>
             </div>
             <div id="password">
                 <label for="password">Password:</label>
-                <input class="password" type="password" value="" id=" password " required>
+                <input class="password" type="password" value="" id=" password " name="password" required>
             </div><br>
             <div id="confirm-password">
                 <label for="confirm-password">Confirm Password:</label>
-                <input class="confirm-password" type="password" value="" id="confirm-password" required>
+                <input class="confirm-password" type="password" value="" id="confirm-password" name="confirm-password"
+                    required>
             </div><br>
             <div class=" signup ">
                 <button type="submit">Sign Up</button>

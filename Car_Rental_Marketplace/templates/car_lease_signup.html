@@ -9,8 +9,120 @@
 </head>
 
 <body>
-    <style></style>
-    <a href="/car_lease/login">Already a User?</a>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        body {
+            padding: 15px;
+            text-align: center;
+            margin: 15px 30px;
+        }
+
+        .form {
+            background-color: white;
+            padding: 5px 20px 15px 5px;
+        }
+
+        #username {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #password {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #confirm-password {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #email {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #phone-number {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #car-company {
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #car-model {
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="email"],
+        input[type="submit"],
+        input[type="form-control"] textarea {
+            width: 40%;
+        }
+    </style>
+    <h3>
+        Please enter your signup credentials:
+    </h3>
+    <div class="form">
+        <form method="POST">
+            {% csrf_token %}
+            <div id="username">
+                <label for="username">Username:</label>
+                <input class="username" type="text" value="" id="username" name="username" required>
+            </div><br>
+            <div id="email">
+                <label for="email">Email:</label>
+                <input class="email" type="text" value="" id="email" name="email" required>
+            </div>
+            <div id="phone-number-field">
+                <label for="phone-number">Phone Number:</label>
+                <input class="phone-number" type="text" id="phone-number" name="phone-number" required>
+            </div>
+            <div>
+                <label for="car-company">Car Company:</label>
+                <input type="text" name="car-company" id="car-company" class="car-company" required>
+            </div>
+            <div>
+                <label for="car-model">Car Model:</label>
+                <input class="car-model" name="car-model" id="car-model" type="text" class="car-model" required>
+            </div>
+            <div>
+                <div>
+                    <label for="car-price">Car Price:</label>
+                    <input type="text" name="car-price" id="car-price" class="car-price" required>
+                </div>
+            </div>
+            <div id="password">
+                <label for="password">Password:</label>
+                <input class="password" type="password" value="" id=" password " name="password" required>
+            </div><br>
+            <div id="confirm-password">
+                <label for="confirm-password">Confirm Password:</label>
+                <input class="confirm-password" type="password" value="" id="confirm-password" name="confirm-password"
+                    required>
+            </div><br>
+            <div class=" signup ">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <a href="/car_lease_login">Already a User?</a>
+    </div>
+    <script></script>
 </body>
 
 </html>

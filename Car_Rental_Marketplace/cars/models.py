@@ -46,6 +46,7 @@ class Car(models.Model):
         (""),
         max_length=50,
     )
+    car_id = models.AutoField((""), primary_key=True)
     car_model = models.CharField(max_length=50)
     date_of_registration = models.CharField(max_length=50)
     car_price = models.IntegerField()

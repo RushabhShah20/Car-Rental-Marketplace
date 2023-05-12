@@ -7,9 +7,11 @@ from multiselectfield import MultiSelectField
 
 
 class Car_leaser(models.Model):
+    car_owner_id = models.AutoField((""), primary_key=True)
     car_owner_name = models.CharField((""), max_length=50)
     car_owner_email = models.EmailField((""), max_length=254)
     car_owner_mobile_number = models.IntegerField((""))
     car_owner_car_company = models.CharField((""), max_length=50)
     car_owner_car_model = models.CharField((""), max_length=50)
     car_owner_car_price = models.IntegerField((""))
+    car_owner_password = models.CharField((""), max_length=50)
