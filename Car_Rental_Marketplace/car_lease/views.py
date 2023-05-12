@@ -9,6 +9,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from .models import Car_leaser
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.contrib.sessions.backends.db import SessionStore
 
 
 # Create your views here.
@@ -20,6 +23,7 @@ def car_lease_login(request):
             car_owner_email=email, car_owner_password=password
         ).first()
         if user:
+            request.session["user_id"] = user.car_owner_id
             return redirect("/car_lease_dashboard")
         else:
             error_message = "Invaild email or password"
@@ -97,5 +101,23 @@ def car_lease_signup(request):
     return render(request, "car_lease_signup.html")
 
 
+def car_lease_logout(request):
+    logout(request)
+    return redirect("/car_lease_login")
+
+
+# @login_required
 def car_lease_dashboard(request):
-    return render(request, "car_lease_dashboard.html")
+    # get the logged-in user
+
+    user_id = request.session.get("user_id")
+    print(user_id)
+    if user_id:
+        user1 = Car_leaser.objects.get(car_owner_id=user_id)
+        print(user1)
+        user = user1.car_owner_name
+        print(user)
+        cars = Car_leaser.objects.filter(car_owner_email=user1.car_owner_email)
+        return render(request, "car_lease_dashboard.html", {"cars": cars})
+    else:
+        return redirect("/car_lease_login")

@@ -88,6 +88,7 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+LOGIN_URL = "/login/?next=%(next)s"
 
 
 # Password validation

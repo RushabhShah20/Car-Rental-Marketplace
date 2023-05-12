@@ -10,8 +10,21 @@
 </head>
 
 <body>
-    <style></style>
-    Welcome User
+    <style></style>{% block content %} Welcome {{user1.car_owner_name}} {% endblock %}
+    <div id="cars">
+        Your cars:
+        <ul>
+            {% for car in cars %}
+            <li>{{car.car_owner_car_company}}{{car.car_owner_car_model}}=Rs.{{car.car_owner_car_price}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <form action="{% url 'car_lease_logout'%}" method="post">
+            {% csrf_token%}
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 </body>
 
 </html>

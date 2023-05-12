@@ -58,6 +58,7 @@ def login(request):
         password = request.POST["password"]
         user = Car_renter.objects.filter(email=email, password=password).first()
         if user:
+            request.session["user_id"] = user.car_renter_id
             return redirect("/dashboard")
         else:
             error_message = "Invaild email or password"
@@ -95,8 +96,19 @@ def about(request):
 
 
 def dashboard(request):
-    context = {}
-    return render(request, "dashboard.html", context)
+    # get the logged-in user
+
+    user_id = request.session.get("user_id")
+    print(user_id)
+    if user_id:
+        user1 = Car_renter.objects.get(car_renter_id=user_id)
+        print(user1)
+        user = user1.username
+        print(user)
+        cars = Car_renter.objects.filter(email=user1.email)
+        return render(request, "dashboard.html", {"cars": cars})
+    else:
+        return redirect("/login")
 
 
 print("The database being used is:", connection.vendor)
