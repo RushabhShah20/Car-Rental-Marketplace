@@ -111,4 +111,8 @@ def dashboard(request):
         return redirect("/login")
 
 
+def payment_detail(request):
+    return render(request, "payment_detail.html")
+
+
 print("The database being used is:", connection.vendor)

@@ -18,6 +18,7 @@ from django.urls import path, include
 from car_rental import views
 from car_lease import views as vs
 from django.contrib.auth import views as auth_views
+from cars import views as vws
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -32,4 +33,6 @@ urlpatterns = [
     path("car_lease_signup/", vs.car_lease_signup, name="car_lease_signup"),
     path("car_lease_dashboard/", vs.car_lease_dashboard, name="car_lease_dashboard"),
     # path("accounts/", include("django.contrib.auth.urls")),
+    path("car_detail/", vws.car_detail, name="car_detail"),
+    path("payment_detail/", views.payment_detail, name="payment_detail"),
 ]
